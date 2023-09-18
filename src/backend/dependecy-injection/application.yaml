@@ -1,0 +1,7 @@
+services:
+  repositories.UserRepository:
+    class: ../../Contexts/Rocket/User/application/MysqlUserRepository
+
+  controllers.AuthenticationController:
+    class: ../controllers/authentication
+    arguments: ['@repositories.UserRepository']
