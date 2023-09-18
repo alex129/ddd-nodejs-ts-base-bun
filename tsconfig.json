@@ -22,8 +22,9 @@
       "reflect-metadata"
     ],
     "paths": {
-      "@contollers/*": ["./src/backend/contollers/*"],
-      "@user/*": ["./src/Contexts/Rocket/User/*"]
+      "@contollers/*": ["./src/Backend/controllers/*"],
+      "@user/*": ["./src/Rocket/User/*"],
+      "@backend/*": ["./src/Backend/*"]
     }
   }
 }

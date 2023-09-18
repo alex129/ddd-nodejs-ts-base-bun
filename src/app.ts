@@ -1,6 +1,6 @@
 import express, { Request, Response } from 'express';
 import cors from 'cors';
-import authenticationRouter from './backend/routes/authentication.route';
+import authenticationRouter from './Backend/routes/authentication.route';
 
 const PORT = Number(process.env.PORT || 3000);
 const app = express();
