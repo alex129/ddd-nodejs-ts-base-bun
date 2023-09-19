@@ -3,7 +3,7 @@
   "module": "src/app.ts",
   "type": "module",
   "scripts": {
-    "start": "bun run src/Backend/start.ts"
+    "start": "bun run src/start.ts"
   },
   "devDependencies": {
     "@types/cors": "^2.8.14",

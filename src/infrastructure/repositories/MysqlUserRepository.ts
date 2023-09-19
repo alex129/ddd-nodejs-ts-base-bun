@@ -1,5 +1,5 @@
-import User from '../domain/User';
-import UserRepository from '../domain/UserRepository';
+import User from '@user/User';
+import UserRepository from '@user/contracts/UserRepository';
 
 export default class MysqlUserRepository implements UserRepository {
   async create(user: User): Promise<void> {

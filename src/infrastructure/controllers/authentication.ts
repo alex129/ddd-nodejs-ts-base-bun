@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import UserCreator from '@user/application/UserCreator';
+import UserCreator from '../../application/UserCreator';
 
 export default class AuthenticationController {
   userCreator: UserCreator;

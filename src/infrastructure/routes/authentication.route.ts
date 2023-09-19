@@ -1,6 +1,6 @@
+import AuthenticationController from '@contollers/authentication';
 import { Router } from 'express';
-import AuthenticationController from '../controllers/authentication';
-import container from '../dependecy-injection';
+import container from '@src/dependecy-injection';
 
 const router = Router();
 const controller = container.get<AuthenticationController>('controllers.AuthenticationController');

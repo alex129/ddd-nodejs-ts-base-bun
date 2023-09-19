@@ -1,12 +1,12 @@
 services:
   repositories.UserRepository:
-    class: Rocket/User/infrastructure/MysqlUserRepository
+    class: infrastructure/repositories/MysqlUserRepository
 
   usecase.UserCreator:
-    class: Rocket/User/application/UserCreator
+    class: application/UserCreator
     arguments: ['@repositories.UserRepository']
 
   controllers.AuthenticationController:
-    class: Backend/controllers/authentication
+    class: infrastructure/controllers/authentication
     arguments: ['@usecase.UserCreator']
 

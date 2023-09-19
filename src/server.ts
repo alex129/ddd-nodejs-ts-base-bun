@@ -2,7 +2,7 @@ import express from 'express';
 import * as http from 'http';
 import cors from 'cors';
 
-import authenticationRouter from '@backend/routes/authentication.route';
+import authenticationRouter from '@routes/authentication.route';
 
 export class Server {
   private readonly express: express.Express;

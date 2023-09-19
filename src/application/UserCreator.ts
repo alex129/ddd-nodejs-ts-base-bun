@@ -1,5 +1,5 @@
-import User from '@user/domain/User';
-import UserRepository from '@user/domain/UserRepository';
+import User from '@user/User';
+import UserRepository from '@user/contracts/UserRepository';
 
 export default class UserCreator {
   readonly repository: UserRepository;
