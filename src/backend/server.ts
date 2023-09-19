@@ -15,6 +15,7 @@ export class Server {
     this.port = port;
     this.express = express();
     this.express.use(cors());
+    this.express.use(express.json());
     this.loadRoutes();
   }
 

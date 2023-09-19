@@ -1,24 +1,18 @@
-import User from '@user/domain/User';
-import UserRepository from '../../Rocket/User/domain/UserRepository';
 import { Request, Response } from 'express';
+import UserCreator from '@user/application/UserCreator';
 
 export default class AuthenticationController {
-  readonly repository: UserRepository;
+  userCreator: UserCreator;
 
-  constructor(repository: UserRepository) {
-    this.repository = repository;
+  constructor(userCreator: UserCreator) {
+    this.userCreator = userCreator;
     this.register = this.register.bind(this);
     this.login = this.login.bind(this);
   }
 
-  register(req: Request, res: Response) {
+  async register(req: Request, res: Response) {
     console.log('Request from controller register', req.body);
-    const user = new User({
-      name: 'Jhon Doe',
-      email: '',
-      password: '123456',
-    });
-    this.repository.create(user);
+    await this.userCreator.run('test', 'test', '1234');
     res.send({ data: 'Register' });
   }
 
