@@ -1,6 +1,6 @@
 services:
   repositories.UserRepository:
-    class: Rocket/User/application/MysqlUserRepository
+    class: Rocket/User/infrastructure/MysqlUserRepository
 
   controllers.AuthenticationController:
     class: Backend/controllers/authentication
