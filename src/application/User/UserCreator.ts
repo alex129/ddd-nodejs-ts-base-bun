@@ -8,7 +8,7 @@ export default class UserCreator {
     this.repository = repository;
   }
 
-  async run(name: string, email: string, password: string): Promise<void> {
+  async run({ name, email, password }: Omit<User, 'id'>): Promise<void> {
     const user = new User({ name, email, password });
 
     return this.repository.create(user);
