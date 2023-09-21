@@ -1,8 +1,8 @@
 import express from 'express';
 import * as http from 'http';
 import cors from 'cors';
-
 import authenticationRouter from '@routes/authentication.route';
+import swaggerDocs from './infrastructure/swagger/swagger';
 
 export class Server {
   private readonly express: express.Express;
@@ -29,6 +29,7 @@ export class Server {
       this.httpServer = this.express.listen(this.port, () => {
         console.log(`  Backend App is running at http://localhost:${this.port} in ${env} mode`);
         console.log('  Press CTRL-C to stop\n');
+        swaggerDocs(this.express, this.port);
         resolve();
       });
     });
