@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import UserCreator from '../../application/User/UserCreator';
+import UserCreator from '../../application/UserCases';
 
 export default class AuthenticationController {
   userCreator: UserCreator;
@@ -12,7 +12,7 @@ export default class AuthenticationController {
 
   async register(req: Request, res: Response) {
     console.log('Request from controller register', req.body);
-    await this.userCreator.run(req.body);
+    await this.userCreator.create(req.body);
     res.send({ data: 'Register' });
   }
 

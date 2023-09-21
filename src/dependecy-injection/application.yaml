@@ -2,11 +2,11 @@ services:
   repositories.UserRepository:
     class: infrastructure/repositories/MysqlUserRepository
 
-  usecase.UserCreator:
-    class: application/User/UserCreator
+  usecase.UserCases:
+    class: application/UserCases
     arguments: ['@repositories.UserRepository']
 
   controllers.AuthenticationController:
     class: infrastructure/controllers/authentication
-    arguments: ['@usecase.UserCreator']
+    arguments: ['@usecase.UserCases']
 
