@@ -8,7 +8,7 @@ export default class UserCaser {
     this.repository = repository;
   }
 
-  async create({ name, email, password }: Omit<User, 'id'>): Promise<void> {
+  async create({ name, email, password }: Omit<User, 'id'>): Promise<User> {
     const user = new User({ name, email, password });
 
     return this.repository.create(user);

@@ -5,14 +5,8 @@ import express from 'express';
 // Basic Meta Informations about our API
 const options = {
   definition: {
-    openapi: '3.0.0',
+    swagger: '2.0',
     info: { title: 'Rocket Project API', version: '1.0.0' },
-    servers: [
-      {
-        url: 'http://localhost:3000/',
-        description: 'Local server',
-      },
-    ],
   },
   apis: ['./src/infrastructure/swagger/docs/**/*.yaml'],
 };
@@ -32,4 +26,4 @@ const swaggerDocs = (app: express.Express, port: number) => {
   console.log(`Version 1 Docs are available on http://localhost:${port}/api/v1/docs`);
 };
 
-export default swaggerDocs;
+export default swaggerDocs; 

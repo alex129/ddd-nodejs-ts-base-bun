@@ -20,7 +20,7 @@ export class Server {
   }
 
   private loadRoutes(): void {
-    this.express.use('/auth', authenticationRouter);
+    this.express.use('/api/auth', authenticationRouter);
   }
 
   async listen(): Promise<void> {

@@ -12,8 +12,8 @@ export default class AuthenticationController {
 
   async register(req: Request, res: Response) {
     console.log('Request from controller register', req.body);
-    await this.userCreator.create(req.body);
-    res.send({ data: 'Register' });
+    const user = await this.userCreator.create(req.body);
+    res.send({ data: user });
   }
 
   login(req: Request, res: Response) {
