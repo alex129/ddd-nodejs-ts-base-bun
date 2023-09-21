@@ -60,4 +60,4 @@ bun primsa db push
 
 ### API documentation
 
-Once the server is started, go to http://localhost:3003/api/v1/docs to see the documentation
+Once the server is started, go to http://localhost:3003/api/v1/docs to view the documentation
