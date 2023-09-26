@@ -8,6 +8,6 @@ const register = (routePath: string, router: Router) => {
 };
 
 export const registerRoutes = (router: Router) => {
-  const routes = sync(`${__dirname}/**/*.route.*`);
+  const routes = sync(`${__dirname}/**/*.route.{js,ts}`);
   routes.map((route) => register(route, router));
 };

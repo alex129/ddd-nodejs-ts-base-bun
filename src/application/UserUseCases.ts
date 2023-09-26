@@ -1,7 +1,7 @@
 import User from '@user/User';
 import UserRepository from '@user/contracts/UserRepository';
 
-export default class UserCaser {
+export default class UserUseCases {
   readonly repository: UserRepository;
 
   constructor(repository: UserRepository) {

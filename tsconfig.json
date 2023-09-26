@@ -25,10 +25,5 @@
   "include": ["src/**/*"],
   "ts-node": {
     "require": ["tsconfig-paths/register"]
-    // "esm": true,
-    // "compilerOptions": {
-    //   "module": "esnext",
-    //   "esModuleInterop": true
-    // }
   }
 }

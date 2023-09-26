@@ -3,7 +3,7 @@ services:
     class: infrastructure/repositories/MysqlUserRepository
 
   usecase.UserCases:
-    class: application/UserCases
+    class: application/UserUseCases
     arguments: ['@repositories.UserRepository']
 
   controllers.AuthenticationController:
