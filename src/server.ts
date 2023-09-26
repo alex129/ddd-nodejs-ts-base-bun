@@ -1,10 +1,10 @@
-import express from 'express';
+import express, { Router } from 'express';
 import * as http from 'http';
 import cors from 'cors';
-import authenticationRouter from '@routes/authentication.route';
 import swaggerDocs from './infrastructure/swagger/swagger';
+import { registerRoutes } from './infrastructure/routes';
 
-export class Server {
+export default class Server {
   private readonly express: express.Express;
 
   private readonly port: number;
@@ -16,11 +16,14 @@ export class Server {
     this.express = express();
     this.express.use(cors());
     this.express.use(express.json());
+
     this.loadRoutes();
   }
 
   private loadRoutes(): void {
-    this.express.use('/api/auth', authenticationRouter);
+    const router = Router();
+    this.express.use('/api', router);    
+    registerRoutes(router);
   }
 
   async listen(): Promise<void> {

@@ -1,7 +1,11 @@
+import 'dotenv/config';
 import { RocketProjectBackendApp } from './RocketProjectBackendApp';
+import { loadDependencyContainer } from './dependecy-injection';
 
 try {
-  new RocketProjectBackendApp().start();
+  loadDependencyContainer().then(() => {
+    new RocketProjectBackendApp().start();
+  });
 } catch (e) {
   console.log(e);
   process.exit(1);

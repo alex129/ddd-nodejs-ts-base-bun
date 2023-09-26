@@ -1,31 +1,34 @@
 {
   "compilerOptions": {
-    "lib": ["ESNext"],
-    "module": "esnext",
-    "target": "esnext",
-    "moduleResolution": "bundler",
-    "moduleDetection": "force",
-    "allowImportingTsExtensions": true,
-    "noEmit": true,
-    "composite": true,
+    "module": "CommonJS",
+    "target": "ES2022",
+    "esModuleInterop": true,
+    "sourceMap": true,
+    "noEmit": false,
+    "composite": false,
     "strict": true,
-    "downlevelIteration": true,
-    "skipLibCheck": true,
     "jsx": "preserve",
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
     "allowJs": true,
-    "experimentalDecorators": true,
-    "emitDecoratorMetadata": true,
-    "types": [
-      "bun-types", // add Bun global
-      "reflect-metadata"
-    ],
+    "baseUrl": "src",
+    "outDir": "dist",
+    "rootDir": "src",
     "paths": {
-      "@src/*": ["./src/*"],
-      "@contollers/*": ["./src/infrastructure/controllers/*"],
-      "@routes/*": ["./src/infrastructure/routes/*"],
-      "@user/*": ["./src/domain/User/*"]
+      "@src/*": ["./*"],
+      "@contollers/*": ["./infrastructure/controllers/*"],
+      "@routes/*": ["./infrastructure/routes/*"],
+      "@user/*": ["./domain/User/*"],
+      "@application/*": ["./application/*"]
     }
+  },
+  "include": ["src/**/*"],
+  "ts-node": {
+    "require": ["tsconfig-paths/register"]
+    // "esm": true,
+    // "compilerOptions": {
+    //   "module": "esnext",
+    //   "esModuleInterop": true
+    // }
   }
 }
