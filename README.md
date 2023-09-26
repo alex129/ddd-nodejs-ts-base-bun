@@ -2,7 +2,7 @@
 
 ### Technologies
 
-- [Bun](https://bun.sh/)
+- [NodeJs](https://nodejs.org/en)
 - Eslint
 - Express
 - Prettier
@@ -11,8 +11,7 @@
 
 ### Prerequisites
 
-- Bun
-- Environment variables
+- Node 18.14.1
 
 ### Env base
 
@@ -28,24 +27,22 @@ DATABASE_URL=mysql://user:password@host:port/database
 
 To install dependencies:
 
-Install Bun in MacOs
-
-```bash
-curl -fsSL https://bun.sh/install | bash
-```
-
-Or follow the oficial documentation [Bun](https://bun.sh/docs/installation)
-
 Install project dependencies
 
 ```bash
-bun install
+npm install
 ```
 
-To run:
+To Run:
 
 ```bash
-bun start
+npm run start
+```
+
+To Watch
+
+```bash
+npm run watch
 ```
 
 ### Database migration
