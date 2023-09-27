@@ -20,7 +20,8 @@
       "@routes/*": ["./infrastructure/routes/*"],
       "@user/*": ["./domain/User/*"],
       "@application/*": ["./application/*"]
-    }
+    },
+    "types": ["vitest/globals"]
   },
   "include": ["src/**/*"],
   "ts-node": {
