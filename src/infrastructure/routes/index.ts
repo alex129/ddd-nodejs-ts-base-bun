@@ -1,13 +1,12 @@
 import { Router } from 'express';
 import { sync } from 'glob';
 
-const register = (routePath: string, router: Router) => {
-  // eslint-disable-next-line @typescript-eslint/no-var-requires
-  const { registerToRouter } = require(routePath) as { registerToRouter: (router: Router) => void };
+const register = async (routePath: string, router: Router) => {
+  const { registerToRouter } = await import(routePath) as { registerToRouter: (router: Router) => void };
   registerToRouter(router);
 };
 
-export const registerRoutes = (router: Router) => {
+export const registerRoutes = async (router: Router) => {
   const routes = sync(`${__dirname}/**/*.route.{js,ts}`);
-  routes.map((route) => register(route, router));
+  await Promise.all(routes.map((route) => register(route, router)))
 };

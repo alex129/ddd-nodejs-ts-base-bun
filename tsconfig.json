@@ -11,9 +11,11 @@
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
     "allowJs": true,
-    "baseUrl": "src",
     "outDir": "dist",
     "rootDir": "src",
+    "baseUrl": "src",
+    "resolveJsonModule": true,
+    "noUnusedLocals": true,
     "paths": {
       "@src/*": ["./*"],
       "@contollers/*": ["./infrastructure/controllers/*"],
@@ -24,6 +26,7 @@
     "types": ["vitest/globals"]
   },
   "include": ["src/**/*"],
+  "exclude": ["node_modules"],
   "ts-node": {
     "require": ["tsconfig-paths/register"]
   }

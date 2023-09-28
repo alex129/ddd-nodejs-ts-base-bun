@@ -1,9 +1,12 @@
 import AuthenticationController from '@contollers/authentication';
 import { Router } from 'express';
-import container from '@src/dependecy-injection';
+import MysqlUserRepository from '../repositories/MysqlUserRepository';
+import UserUseCases from '@src/application/UserUseCases';
 
 export const registerToRouter = (router: Router): void => {
-  const controller = container.get<AuthenticationController>('controllers.AuthenticationController');
+  const repository = new MysqlUserRepository();
+  const userUseCase = new UserUseCases(repository);
+  const controller = new AuthenticationController(userUseCase);
 
   router.post('/auth/register', controller.register);
 

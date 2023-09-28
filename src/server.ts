@@ -16,14 +16,12 @@ export default class Server {
     this.express = express();
     this.express.use(cors());
     this.express.use(express.json());
-
-    this.loadRoutes();
   }
 
-  private loadRoutes(): void {
+  async loadRoutes(): Promise<void> {
     const router = Router();
     this.express.use('/api', router);    
-    registerRoutes(router);
+    await registerRoutes(router);
   }
 
   async listen(): Promise<void> {

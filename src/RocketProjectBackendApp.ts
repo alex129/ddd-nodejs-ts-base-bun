@@ -1,12 +1,14 @@
 import Server from './server';
+// import { loadDependencyContainer } from './dependecy-injection';
 
 export class RocketProjectBackendApp {
   server?: Server;
 
   async start(): Promise<void> {
-    const port = Number(process.env.PORT || 5000);
+    // await loadDependencyContainer();
+    const port = Number(process.env.PORT || 0);
     this.server = new Server(port);
-
+    await this.server.loadRoutes();
     return this.server.listen();
   }
 
