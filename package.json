@@ -11,7 +11,8 @@
     "build:clean": "rm -r dist; exit 0",
     "test": "npm run test:features && vitest run",
     "test:watch": "npm run test:features && vitest",
-    "test:features": "PORT=3005"
+    "test:features": "PORT=3005",
+    "migration:generate": "prisma migrate dev --name init"
   },
   "engines": {
     "node": ">=18.14.1",
